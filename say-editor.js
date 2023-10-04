@@ -5,7 +5,7 @@ export default class SayEditor extends HTMLElement {
   }
 
   baseUrl = "https://embeddable.gelinkt-notuleren.lblod.info/assets/";
-  styleFiles = ["frontend-embeddable-notule-editor.css", "vendor.css"];
+  styleFiles = ["vendor.css","frontend-embeddable-notule-editor.css"];
   javascriptFiles = [
     "vendor.js",
     "frontend-embeddable-notule-editor-app.js",
