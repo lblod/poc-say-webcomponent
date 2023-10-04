@@ -32,7 +32,7 @@
 
        baseUrl = "https://embeddable.gelinkt-notuleren.lblod.info/assets/";
        basePath = "assets/"
-       styleFiles = ["frontend-embeddable-notule-editor-px.css", "vendor-px.css"];
+       styleFiles = ["vendor-px.css","frontend-embeddable-notule-editor-px.css"];
        javascriptFiles = [
          "vendor.js",
          "frontend-embeddable-notule-editor-app.js",
@@ -254,8 +254,6 @@
          --duet-radius:3px;
          --duet-z-index:10
        }
-      </style>
-      <style>
        :host {
          font-family: var(--au-font);
          font-size: var(--au-global-font-size);
@@ -282,16 +280,6 @@
 
        .notule-editor {
         overflow: hidden;
-       }
-
-       ::-moz-selection {
-         color: var(--au-select-text-color);
-         background-color: var(--au-select-text-bg);
-       }
-
-       ::selection {
-         color: var(--au-select-text-color);
-         background-color: var(--au-select-text-bg);
        }`;
        }
      }

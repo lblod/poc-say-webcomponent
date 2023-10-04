@@ -6,7 +6,7 @@ export default class SayEditor extends HTMLElement {
 
   baseUrl = "https://embeddable.gelinkt-notuleren.lblod.info/assets/";
   basePath = "assets/"
-  styleFiles = ["frontend-embeddable-notule-editor-px.css", "vendor-px.css"];
+  styleFiles = ["vendor-px.css","frontend-embeddable-notule-editor-px.css"];
   javascriptFiles = [
     "vendor.js",
     "frontend-embeddable-notule-editor-app.js",
@@ -229,8 +229,6 @@ export default class SayEditor extends HTMLElement {
          --duet-radius:3px;
          --duet-z-index:10
        }
-      </style>
-      <style>
        :host {
          font-family: var(--au-font);
          font-size: var(--au-global-font-size);
