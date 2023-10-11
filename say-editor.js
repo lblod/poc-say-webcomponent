@@ -5,7 +5,8 @@ export default class SayEditor extends HTMLElement {
   }
 
   baseUrl = "https://embeddable.gelinkt-notuleren.lblod.info/assets/";
-  styleFiles = ["frontend-embeddable-notule-editor.css", "vendor.css"];
+  basePath = "assets/"
+  styleFiles = ["vendor-px.css","frontend-embeddable-notule-editor-px.css"];
   javascriptFiles = [
     "vendor.js",
     "frontend-embeddable-notule-editor-app.js",
@@ -24,7 +25,7 @@ export default class SayEditor extends HTMLElement {
       const link = document.createElement("link");
       link.setAttribute("rel", "stylesheet");
       link.setAttribute("type", "text/css");
-      link.setAttribute("href", this.baseUrl + file);
+      link.setAttribute("href", this.basePath + file);
       shadow.appendChild(link);
     });
 
@@ -79,8 +80,8 @@ export default class SayEditor extends HTMLElement {
     });
   }
 
-  get extraStyle() {
-    return `:root, :host {
+       get extraStyle() {
+         return `:root, :host {
          --au-white:#ffffff;
          --au-gray-100:#f7f9fc;
          --au-gray-200:#e8ebee;
@@ -179,36 +180,36 @@ export default class SayEditor extends HTMLElement {
          --au-regular:400;
          --au-medium:500;
          --au-bold:700;
-         --au-base:1.5rem;
-         --au-para:1.8rem;
-         --au-para-small:1.6rem;
-         --au-lead:2.2rem;
-         --au-lead-medium:2rem;
-         --au-lead-small:1.8rem;
-         --au-small:1.4rem;
-         --au-tiny:1.3rem;
-         --au-h-functional-small:1.3rem;
-         --au-h-functional:1.5rem;
-         --au-h6:1.6rem;
-         --au-h5:1.8rem;
-         --au-h4:2rem;
-         --au-h3-small:2.2rem;
-         --au-h3:2.6rem;
-         --au-h2-small:2.6rem;
-         --au-h2:3.2rem;
-         --au-h1-small:3rem;
-         --au-h1-medium:4rem;
-         --au-h1:4.4rem;
-         --au-icon-size:1.3rem;
-         --au-icon-size-medium:1.6rem;
-         --au-icon-size-large:1.9rem;
-         --au-radius:0.3rem;
-         --au-border:0.2rem;
-         --au-outline-border:0.3rem;
+         --au-base:15px;
+         --au-para:18px;
+         --au-para-small:16px;
+         --au-lead:22px;
+         --au-lead-medium:20px;
+         --au-lead-small:18px;
+         --au-small:14px;
+         --au-tiny:13px;
+         --au-h-functional-small:13px;
+         --au-h-functional:15px;
+         --au-h6:16px;
+         --au-h5:18px;
+         --au-h4:20px;
+         --au-h3-small:22px;
+         --au-h3:26px;
+         --au-h2-small:26px;
+         --au-h2:32px;
+         --au-h1-small:30px;
+         --au-h1-medium:40px;
+         --au-h1:44px;
+         --au-icon-size:13px;
+         --au-icon-size-medium:16px;
+         --au-icon-size-large:19px;
+         --au-radius:3px;
+         --au-border:2px;
+         --au-outline-border:3px;
          --au-outline-border-style:solid;
-         --au-outline:#5990de 0.3rem solid;
-         --au-outline-offset:0.2rem;
-         --au-outline-offset-negative:-0.3rem;
+         --au-outline:#5990de 3px solid;
+         --au-outline-offset:2px;
+         --au-outline-offset-negative:-3px;
          --au-duration:0.125s;
          --au-easing:cubic-bezier(0.19, 1, 0.22, 1);
          --au-transition:0.125s cubic-bezier(0.19, 1, 0.22, 1);
@@ -225,22 +226,35 @@ export default class SayEditor extends HTMLElement {
          --duet-font:var(--au-font);
          --duet-font-normal:400;
          --duet-font-bold:500;
-         --duet-radius:0.3rem;
+         --duet-radius:3px;
          --duet-z-index:10
        }
-
        :host {
          font-family: var(--au-font);
-         font-size: 62.5%; /* [4] */
-         min-height: 100%; /* [3] */
+         font-size: var(--au-global-font-size);
+         line-height: var(--au-global-line-height);
          background-color: var(--au-page-bg);
          text-rendering: optimizeLegibility;
          -webkit-overflow-scrolling: touch;
        }
 
-       :host {
-         font-size: var(--au-global-font-size); /* [4] */
-         line-height: var(--au-global-line-height); /* [1] */
+       :host * {
+        box-sizing: border-box;
+        font-family: var(--au-font);
+       }
+
+       :host *:before {
+        box-sizing: border-box;
+        font-family: var(--au-font);
+       }
+
+       :host *:after {
+        box-sizing: border-box;
+        font-family: var(--au-font);
+       }
+
+       .notule-editor {
+        overflow: hidden;
        }
 
        ::-moz-selection {
@@ -252,5 +266,6 @@ export default class SayEditor extends HTMLElement {
          color: var(--au-select-text-color);
          background-color: var(--au-select-text-bg);
        }`;
-  }
+    }
 }
+
